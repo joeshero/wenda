@@ -1,0 +1,32 @@
+spring:
+  thymeleaf:
+    suffix: .html
+    mode: HTML
+    cache: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/wenda?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    static-path-pattern: /static/**
+  redis:
+    database: 0
+    host: 192.168.43.200
+    port: 6381
+    password: 1234
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+    timeout: 1000ms
+
+
+mybatis:
+    config-location: classpath:mybatis-config.xml
+    mapper-locations: classpath:com/jnu/wenda/dao/*.xml
+
+logging:
+  level:
+    com.*: debug
